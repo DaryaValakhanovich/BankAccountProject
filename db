@@ -1,0 +1,15 @@
+INSERT INTO public.t_role(id, name)
+  VALUES (1, 'ROLE_USER'), (2, 'ROLE_ADMIN');
+
+INSERT INTO public.t_account(balance, blocked)
+  VALUES (10, false), (20, true);
+
+INSERT INTO public.t_user(password, username)
+  VALUES ('$2a$10$tjvfB3KqIUFqjBZl/R2tSuqx5nsbrAHhro8m7zykws2vUUsGHq0gC', 'admin');
+
+INSERT INTO public.t_user(password, username, account_id)
+  VALUES ('$2a$10$WbhqHQnQJGAoTkeRS0sKiOUj63sfiVrQKbXniCLf/sZPoP5nm0pO.', 'user1', 1),
+	('$2a$10$/mQp9fiRzVHa8kY60mJmm.Rq7lH6.wvWCOf4YDDks1kXKfeU3m13u', 'user2', 2);
+
+INSERT INTO public.t_user_roles(user_id, roles_id)
+  VALUES (1, 2), (2,1), (3,1);
